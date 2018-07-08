@@ -30,7 +30,7 @@ A série possui caracteristicas de sazonalidade aditiva com tendência moderada 
 
 ## Ajuste do modelo
 
-Para a estimação dos parametros e ajuste do modelo será utilizado a função `nnetar()`, que utiliza o algoritimo baseado na função [nnet()](https://cran.r-project.org/web/packages/nnet/) desenvolvido e publicado por Venables e Ripley (2002). Está abordagem somente considera a arquitertura feed-forward networks com uma camada intermediária usando a notação `NNAR(p,k)` para séries sem sazonalidade e `NNAR(p,P,k)[m]` para séries com sazonalidade sendo que `p` representa o número de lags na camada de entrada, `k` o número de nós na camada intermediária da rede, `P` ó número de lags sazonais e `[m]` a ordem sazonal.
+Para a estimação dos parâmetros e ajuste do modelo será utilizado a função `nnetar()`, que utiliza o algoritimo baseado na função [nnet()](https://cran.r-project.org/web/packages/nnet/) desenvolvido e publicado por Venables e Ripley (2002). Esta abordagem somente considera a arquitertura feed-forward networks com uma camada intermediária usando a notação `NNAR(p,k)` para séries sem sazonalidade e `NNAR(p,P,k)[m]` para séries com sazonalidade sendo que `p` representa o número de lags na camada de entrada, `k` o número de nós na camada intermediária da rede, `P` o número de lags sazonais e `[m]` a ordem sazonal.
 
 ```{r ajuste}
 NNAR_fit <- nnetar(MA)
@@ -49,7 +49,7 @@ NNAR_fit #sai o modelo ajustado
 ## sigma^2 estimated as 3022826
 ```
 
-O modelo ajustado automaticamente considerou 2 lags na camada de entrada, 1 lag sazonal de ordem 12 (meses) e 2 nós na camada intermediária, tais parametross podem e devem ser alterados a fim de buscar um melhor ajuste do modelo a partir do comando `nnetar(MA, p = 1, P = 1, size = 1)`, também é possível definir o número de repetições para o ajuste do modelo adicionando o argumento `repeats = 20`, o que acarretará em um provavél aumento da acurácia, mas também exigira maior tempo para o ajuste da rede caso repeats > 20.
+O modelo ajustado automaticamente considerou 2 lags na camada de entrada, 1 lag sazonal de ordem 12 (meses) e 2 nós na camada intermediária, tais parametross podem e devem ser alterados a fim de buscar um melhor ajuste do modelo a partir do comando `nnetar(MA, p = 1, P = 1, size = 1)`, também é possível definir o número de repetições para o ajuste do modelo adicionando o argumento `repeats = 20`, o que acarretará em um provavél aumento da acurácia, mas também exigirá maior tempo para o ajuste da rede caso `repeats > 20`.
 
 ## Verificação dos résiduos
 
