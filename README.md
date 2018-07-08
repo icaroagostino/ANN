@@ -30,7 +30,7 @@ A série possui caracteristicas de sazonalidade aditiva com tendência moderada 
 
 ## Ajuste do modelo
 
-Para a estimação dos parametros e ajuste do modelo será utilizado a função `nnetar()`, que utiliza o algoritimo baseado na função [nnet()](https://cran.r-project.org/web/packages/nnet/) desenvolvido e publicado por Venables e Ripley (2002). Está abordagem somente considera a arquitertura feed-forward networks com uma camada intermediária usando a notação NNAR(p,k) para séries sem sazonalidade e NNAR(p,P,k)[m] para séries com sazonalidade sendo que 'p' representa o número de lags na camada de entrada, 'k' o número de nós na camada intermediária da rede, P ó número de lags sazonais e [m] a ordem sazonal.
+Para a estimação dos parametros e ajuste do modelo será utilizado a função `nnetar()`, que utiliza o algoritimo baseado na função [nnet()](https://cran.r-project.org/web/packages/nnet/) desenvolvido e publicado por Venables e Ripley (2002). Está abordagem somente considera a arquitertura feed-forward networks com uma camada intermediária usando a notação `NNAR(p,k)` para séries sem sazonalidade e `NNAR(p,P,k)[m]` para séries com sazonalidade sendo que `p` representa o número de lags na camada de entrada, `k` o número de nós na camada intermediária da rede, `P` ó número de lags sazonais e `[m]` a ordem sazonal.
 
 ```{r ajuste}
 NNAR_fit <- nnetar(MA)
@@ -71,6 +71,6 @@ autoplot(forecast(NNAR_fit, h = 12, PI = T))
 
 ## Obs.
 
-Os dados utilizados nesse exemplo são públicos, para mais detalhes baixe o script NNAR.R que está [nesse](https://github.com/icaroagostino/ANN/) repositório.
+Os dados utilizados nesse exemplo são públicos, para mais detalhes baixe o script [NNAR.R](https://github.com/icaroagostino/ANN/blob/master/NNAR.R) que está [nesse](https://github.com/icaroagostino/ANN/) repositório.
 
 contato: icaroagostino@gmail.com
