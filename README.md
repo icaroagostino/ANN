@@ -11,7 +11,7 @@ library(forecast) #Modelos de previsão (Hyndman and Khandakar, 2008)
 library(ggplot2) #Elegant Graphics (Wickham, 2009)
 ```
 
-Para este exemplo vamos importar um banco direto da internet que está hospedado [aqui](https://github.com/icaroagostino/ARIMA/tree/master/dados), são dados mensais do saldo de emprego do estado do Maranhão.
+Para este exemplo vamos importar um banco direto da internet que está hospedado [aqui](https://github.com/icaroagostino/ARIMA/blob/master/dados/MA.txt), são dados mensais do saldo de emprego do estado do Maranhão.
 
 ```{r dados}
 dados <- read.table("https://raw.githubusercontent.com/icaroagostino/ARIMA/master/dados/MA.txt", header=T)
