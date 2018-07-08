@@ -18,14 +18,13 @@ dados <- read.table("https://raw.githubusercontent.com/icaroagostino/ARIMA/maste
 attach(dados) #tranformando em objeto
 MA <- ts(MA, start = 2007, frequency = 12) #tranformando em Séries Temporal
 ```
-
-
-
 ### Visualização
 
 ```{r graf}
 ggtsdisplay(MA, main="Saldo de emprego - MA")
 ```
+
+<img src="img/Exemplo MA/graf.png" align="center"/>
 
 A série possui caracteristicas de sazonalidade aditiva com tendência moderada negativa, além disso a análise ACF permite evidenciar a presença de autocorrelação temporal entre as observações.
 
@@ -38,6 +37,18 @@ NNAR_fit <- nnetar(MA)
 NNAR_fit #sai o modelo ajustado
 ```
 
+```{r model}
+## Series: MA 
+## Model:  NNAR(2,1,2)[12] 
+## Call:   nnetar(y = MA)
+## 
+## Average of 20 networks, each of which is
+## a 3-2-1 network with 11 weights
+## options were - linear output units 
+## 
+## sigma^2 estimated as 3022826
+```
+
 O modelo ajustado automaticamente considerou 2 lags na camada de entrada, 1 lag sazonal de ordem 12 (ano) e 2 nós na camada intermediária, tais parametross podem e devem ser alterados a fim de buscar um melhor ajuste do modelo a partir do comando `nnetar(MA, p = 1, P = 1, size = 1)`, também é possível definir o número de repetições para o ajuste do modelo adicionando o argumento `repeats = 20`, o que acarretará em um provavél aumento da acurácia, mas também exigira maior tempo para o ajuste da rede caso repeats > 20.
 
 ## Verificação dos résiduos
@@ -46,6 +57,8 @@ O modelo ajustado automaticamente considerou 2 lags na camada de entrada, 1 lag 
 checkresiduals(forecast(NNAR_fit))
 ```
 
+<img src="img/Exemplo MA/res.png" align="center"/>
+
 Os resíduos gerados pelo modelo apresentaram caracteristicas de ruído branco.
 
 ## Previsão
@@ -53,6 +66,8 @@ Os resíduos gerados pelo modelo apresentaram caracteristicas de ruído branco.
 ```{r Prev}
 autoplot(forecast(NNAR_fit, h = 12, PI = T))
 ```
+
+<img src="img/Exemplo MA/prev.png" align="center"/>
 
 ## Obs.
 
