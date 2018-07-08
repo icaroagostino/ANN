@@ -49,7 +49,7 @@ NNAR_fit #sai o modelo ajustado
 ## sigma^2 estimated as 3022826
 ```
 
-O modelo ajustado automaticamente considerou 2 lags na camada de entrada, 1 lag sazonal de ordem 12 (ano) e 2 nós na camada intermediária, tais parametross podem e devem ser alterados a fim de buscar um melhor ajuste do modelo a partir do comando `nnetar(MA, p = 1, P = 1, size = 1)`, também é possível definir o número de repetições para o ajuste do modelo adicionando o argumento `repeats = 20`, o que acarretará em um provavél aumento da acurácia, mas também exigira maior tempo para o ajuste da rede caso repeats > 20.
+O modelo ajustado automaticamente considerou 2 lags na camada de entrada, 1 lag sazonal de ordem 12 (meses) e 2 nós na camada intermediária, tais parametross podem e devem ser alterados a fim de buscar um melhor ajuste do modelo a partir do comando `nnetar(MA, p = 1, P = 1, size = 1)`, também é possível definir o número de repetições para o ajuste do modelo adicionando o argumento `repeats = 20`, o que acarretará em um provavél aumento da acurácia, mas também exigira maior tempo para o ajuste da rede caso repeats > 20.
 
 ## Verificação dos résiduos
 
