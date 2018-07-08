@@ -54,7 +54,7 @@ O modelo ajustado automaticamente considerou 2 lags na camada de entrada, 1 lag 
 ## Verificação dos résiduos
 
 ```{r res}
-checkresiduals(forecast(NNAR_fit))
+checkresiduals(NNAR_fit)
 ```
 
 <img src="img/Exemplo MA/res.png" align="center"/>
