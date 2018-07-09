@@ -69,8 +69,8 @@ autoplot(forecast(NNAR_fit, h = 12, PI = T))
 
 <img src="img/Exemplo MA/prev.png" align="center"/>
 
-## Obs.
+## Obs.:
 
-Os dados utilizados nesse exemplo são públicos, para mais detalhes baixe o script [NNAR.R](https://github.com/icaroagostino/ANN/blob/master/NNAR.R) que está [nesse](https://github.com/icaroagostino/ANN/) repositório.
+Os dados utilizados nesse exemplo são públicos, para mais detalhes baixe o script [NNAR.R](https://github.com/icaroagostino/ANN/blob/master/NNAR.R) que está [neste](https://github.com/icaroagostino/ANN/) repositório.
 
 contato: icaroagostino@gmail.com
