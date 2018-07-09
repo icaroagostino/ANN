@@ -24,7 +24,7 @@ MA <- ts(MA, start = 2007, frequency = 12) #tranformando em Séries Temporal
 ggtsdisplay(MA, main="Saldo de emprego - MA")
 ```
 
-<img src="img/Exemplo MA/graf.png" align="center"/>
+<img src="img/Exemplo MA/graff.png" align="center"/>
 
 A série possui caracteristicas de sazonalidade aditiva com tendência moderada negativa, além disso a análise ACF permite evidenciar a presença de autocorrelação temporal entre as observações.
 
